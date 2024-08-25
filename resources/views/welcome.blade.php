@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @vite('resources/css/app.css')
-</head>
+    <link rel="preload" as="style" href="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-CWglBzIt.css" />
+    <link rel="stylesheet" href="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-CWglBzIt.css" />
+  </head>
 <body>
 <header class="bg-white">
   <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
