@@ -12,12 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
-        <link rel="preload" as="style" href="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-oTPo2Bbo.css" />
-        <link rel="modulepreload" href="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-BmrwFrBv.js" />
-        <link rel="stylesheet" href="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-oTPo2Bbo.css" data-navigate-track="reload" />
-        <script type="module" src="https://garapov-competition-preview-ebf0.twc1.net/build/assets/app-BmrwFrBv.js" data-navigate-track="reload"></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
         @livewireStyles

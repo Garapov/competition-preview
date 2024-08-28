@@ -10,8 +10,5 @@ export default defineConfig({
             ],
             refresh: true,
         }),
-    ],
-    server: {
-        host: 'https://garapov-competition-preview-ebf0.twc1.net'
-    },
+    ]
 });
