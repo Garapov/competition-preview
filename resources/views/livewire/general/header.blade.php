@@ -16,6 +16,7 @@
         <div class="header__right">
             @livewire('general.payments')
             @livewire('general.auth')
+            @livewire('general.minicart')
         </div>
     </div>
 </header>

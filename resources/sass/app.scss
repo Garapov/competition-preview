@@ -17,13 +17,16 @@ body {
         align-items: center;
         gap: 10px;
         background: #9947CC;
+
         &--dark {
             background: #232121;
         }
     }
+
     &__button-icon {
         font-size: 0;
     }
+
     &__button-text {
         font-size: 16px;
         font-family: 'Segoe UI';
@@ -32,6 +35,26 @@ body {
         text-align: center;
         text-transform: uppercase;
         color: #fff;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 17px;
+
+        input {
+            width: 14px;
+            height: 14px;
+        }
+
+        .text {
+            color: #333;
+            font-size: 12px;
+            font-family: 'Segoe UI';
+            font-weight: 400;
+            line-height: 18px;
+            letter-spacing: 0%;
+        }
     }
 }
 
@@ -42,17 +65,20 @@ body {
         padding: 12px;
         font-family: SegoeUI;
     }
+
     &__bottom {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 22px 80px 38px;
     }
+
     &__left {
         display: flex;
         align-items: center;
         flex: 1 1 auto;
     }
+
     &__right {
         display: flex;
         align-items: center;
@@ -76,6 +102,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+
         ul {
             padding: 0;
             margin: 0;
@@ -84,6 +111,7 @@ body {
             align-items: center;
             gap: 34px;
         }
+
         a {
             font-size: 16px;
             font-family: 'Segoe UI';
@@ -94,16 +122,141 @@ body {
             text-decoration: none;
         }
     }
+
     &__payments {
         display: flex;
         align-items: center;
         gap: 7px;
     }
+
     &__payment {
         font-size: 0;
     }
-    &__auth  {
+
+    &__auth {
         display: flex;
         gap: 15px;
+    }
+
+    &__auth-block {
+        position: relative;
+    }
+
+    &__auth-popup {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 28px);
+        padding: 20px;
+        border-radius: 40px;
+        background: #FFFFFF;
+        width: 100vw;
+        max-width: 390px;
+        box-sizing: border-box;
+    }
+
+    &__auth-title {
+        font-size: 24px;
+        font-family: 'Segoe UI';
+        font-weight: 700;
+        line-height: 139.9999976158142%;
+        letter-spacing: 0%;
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    &__auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__auth-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        height: 78px;
+        border: 1px solid rgba(0, 0, 0, .1);
+        border-radius: 10px;
+    }
+
+    &__auth-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+
+    &__auth-link {
+        font-size: 12px;
+        font-family: 'Segoe UI';
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0%;
+        color: #333;
+        text-decoration: none;
+    }
+
+    &__auth-button {
+        height: 78px;
+        border: none;
+        background: #AC74F6;
+        width: 100%;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 20px;
+        font-family: 'Segoe UI';
+        font-weight: 600;
+        line-height: 139.9999976158142%;
+        letter-spacing: 0%;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-bottom: 22px;
+    }
+
+    &__minicart {
+        position: relative;
+
+        .icon {
+            font-size: 0;
+        }
+
+        .count {
+            position: absolute;
+            top: -9px;
+            left: 9px;
+            background: #9947CC;
+            color: #fff;
+            padding: 1px 5px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    &__wallet {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 10px;
+
+        .text {
+            font-size: 16px;
+            color: #333333;
+            font-family: 'Segoe UI';
+            font-weight: 600;
+            letter-spacing: 0%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .icon {
+            font-size: 0;
+        }
+
     }
 }
