@@ -15,7 +15,7 @@
         </div>
         <div class="header__right">
             @livewire('general.payments')
-            @livewire('general.auth')
+            <livewire:general.header_auth wire:key="{{ str()->random(50) }}" />
             @livewire('general.minicart')
         </div>
     </div>
