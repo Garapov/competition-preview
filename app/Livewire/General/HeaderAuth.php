@@ -35,7 +35,10 @@ class HeaderAuth extends Component
 
     public function login()
     {
-        $this->validate();
+        $this->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
         $credentials = [
             'email' => $this->email,

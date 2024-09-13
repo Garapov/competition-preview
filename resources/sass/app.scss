@@ -283,3 +283,32 @@ body {
 
     }
 }
+
+
+
+.main_tabs {
+    padding-top: 27px;
+    padding-bottom: 52px;
+    &__in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+    }
+    &__item {
+        padding: 15px 30px;
+        border: 2px solid #AD74F7;
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: 'Segoe UI';
+        font-weight: 600;
+        color: #AD74F7;
+        cursor: pointer;
+        transition: all .3s ease;
+        &--active {
+            background-color:#ad74f7;
+            filter:drop-shadow(0px 20px 20px rgba(0.6745098233222961,0.45490196347236633,0.9647058844566345,0.20000000298023224));
+            color: #fff;
+        }
+    }
+}
