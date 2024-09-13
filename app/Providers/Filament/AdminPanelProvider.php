@@ -18,6 +18,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Hexters\HexaLite\HexaLite;
+use Tobiasla78\FilamentSimplePages\FilamentSimplePagesPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -56,6 +57,8 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])->plugins([
                 HexaLite::make(),
+                FilamentSimplePagesPlugin::make()
+                    ->prefixSlug('page')
             ]);
     }
 }
