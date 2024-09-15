@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Hexters\HexaLite\HexaLite;
 use Tobiasla78\FilamentSimplePages\FilamentSimplePagesPlugin;
+use TomatoPHP\FilamentMediaManager\FilamentMediaManagerPlugin;
 use TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -63,7 +64,8 @@ class AdminPanelProvider extends PanelProvider
                 FilamentSettingsHubPlugin::make()
                     ->allowLocationSettings()
                     ->allowSiteSettings()
-                    ->allowSocialMenuSettings()
+                    ->allowSocialMenuSettings(),
+                FilamentMediaManagerPlugin::make()
             ]);
     }
 }

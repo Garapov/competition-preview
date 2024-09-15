@@ -14,9 +14,11 @@
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
         "tobiasla78/filament-simple-pages": "^0.4.0",
+        "tomatophp/filament-media-manager": "^1.1",
         "tomatophp/filament-settings-hub": "^1.0"
     },
     "require-dev": {
+        "doctrine/dbal": "^3.9",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
