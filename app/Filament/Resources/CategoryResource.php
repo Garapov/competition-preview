@@ -23,9 +23,12 @@ class CategoryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Toggle::make('active')
-                    ->required(),
                 Forms\Components\TextInput::make('name')
+                ->required(),
+                Forms\Components\FileUpload::make('icon')
+                    ->image()
+                    ->required(),
+                Forms\Components\Toggle::make('active')
                     ->required(),
             ]);
     }
@@ -38,6 +41,7 @@ class CategoryResource extends Resource
                     ->boolean(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
+                Tables\Columns\ImageColumn::make('icon'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
