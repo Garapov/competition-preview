@@ -18,6 +18,7 @@ return new class extends Migration
             $table->dateTime('end', precision: 0);
             $table->float('price', precision: 2);
             $table->integer('tickets');
+            $table->integer('category_id');
             $table->timestamps();
         });
     }
