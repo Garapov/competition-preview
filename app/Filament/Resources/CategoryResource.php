@@ -24,7 +24,7 @@ class CategoryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->required(),
+                    ->required(),
                 Forms\Components\FileUpload::make('icon')
                     ->image()
                     ->required(),
