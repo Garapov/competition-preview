@@ -18,7 +18,7 @@ class Raffle extends Model
         'tickets'
     ];
 
-    public function categories  (): BelongsTo
+    public function categories(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
