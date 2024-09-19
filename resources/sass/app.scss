@@ -312,3 +312,46 @@ body {
         }
     }
 }
+
+.main_categories  {
+    &__items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+    &__item {
+        padding: 23px;
+        background-color: #ffffff;
+        border-radius: 20px;
+        width: 282px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        gap: 35px;
+        cursor: pointer;
+        border: 2px solid #fff;
+        &:hover,
+        &--active {
+            border-color: #AC74F6;
+        }
+        &--active {
+            background: #AC74F6;
+        }
+    }
+    &__item-image {
+        max-width: 46px;
+        max-height: 71px;
+    }
+    &__item-text {
+        color: #525252;
+        font-size: 16px;
+        font-family: 'Segoe UI';
+        font-weight: bold;
+        text-transform: uppercase;
+        width: calc(100% - 35px - 46px);
+    }
+    &__item--active &__item-text {
+        color: #fff;
+    }
+}
