@@ -23,4 +23,13 @@ class Raffle extends Model
         return $this->belongsTo(Category::class);
     }
 
+
+    protected static function booted()
+    {
+
+        static::creating(function ($raffle) {
+            Ticket::factory(10)->create();
+        });
+    }
+
 }
