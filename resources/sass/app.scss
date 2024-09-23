@@ -314,11 +314,13 @@ body {
 }
 
 .main_categories  {
+    padding: 0 120px;
     &__items {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 25px;
+        margin-bottom: 62px;
     }
     &__item {
         padding: 23px;
@@ -353,5 +355,38 @@ body {
     }
     &__item--active &__item-text {
         color: #fff;
+    }
+    &__products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
+
+
+.raffle_card {
+    border-radius: 40px;
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    &__image {
+        font-size: 0;
+        aspect-ratio: 100/68;
+        margin-bottom: 20px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+            border-radius: 10px;
+        }
+    }
+    &__name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 140%;
+        text-align: center;
+        color: #111;
+        margin-bottom: 16px;
     }
 }

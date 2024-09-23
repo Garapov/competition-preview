@@ -16,6 +16,10 @@ class Category extends Model
         'icon'
     ];
 
+    protected $with = [
+        'raffles'
+    ];
+
 
     public function raffles(): HasMany
     {
