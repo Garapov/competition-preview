@@ -15,7 +15,6 @@
 
         <div class="main_categories__products">
             @forelse ($raffles as $raffle)
-            {{ $raffle }}
                 @livewire('general.card', [
                     'class' => 'main_categories__product',
                     'image' => asset($raffle->image),

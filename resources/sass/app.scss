@@ -369,6 +369,7 @@ body {
     background: #fff;
     padding: 30px;
     box-sizing: border-box;
+    font-family: "Segoe UI";
     &__image {
         font-size: 0;
         aspect-ratio: 100/68;
@@ -388,5 +389,173 @@ body {
         text-align: center;
         color: #111;
         margin-bottom: 16px;
+    }
+    &__end {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 9px;
+        .number {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 90%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+        }
+        .type {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            text-align: center;
+            color: #333;
+        }
+    }
+    &__end-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+    }
+    &__icon {
+        width: 52px;
+        height: 52px;
+        font-size: 0;
+        cursor: pointer;
+        &--placeholder {
+            pointer-events: none;
+        }
+    }
+    &__solded {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 43px;
+    }
+    &__solded-title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #111;
+        opacity: 0.5;
+    }
+    &__solded-progress {
+        height: 8px;
+        border-radius: 20px;
+        background: rgba(51, 51, 51, 0.2);
+        border-radius: 20px;
+        position: relative;
+    }
+    &__solded-progress-in {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: #c486f4;
+        width: var(--width);
+        border-radius: 20px;
+        transition: all .3s ease;
+    }
+    &__solded-percents {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        span {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 90%;
+            text-transform: uppercase;
+            color: #333;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    &__oldprice,
+    &__price,
+    &__enter_button {
+        display: flex;
+        align-items: center;
+    }
+    &__bottom-left {
+        display: flex;
+        flex-direction: column;
+        gap: 5px; 
+    }
+
+    &__oldprice {
+        color: #b5b5b5;
+        gap: 10px;
+        .left {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+            text-transform: uppercase;
+            text-decoration: line-through;
+            white-space: nowrap;
+        }
+        .right {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 100%;
+            white-space: nowrap;
+        }
+    }
+    &__price {
+        color: #5c0b8e;
+        gap: 10px;
+        .left {
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 100%;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .right {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 100%;
+            white-space: nowrap;
+        }
+    }
+    &__bottom-right {
+        flex: 1 1 auto;
+    }
+    &__enter_button {
+        border: none;
+        background: #9947cc;
+        border-radius: 10px;
+        max-width: 277px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        padding: 14px;
+        margin-left: auto;
+        cursor: pointer;
+        .text {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 140%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            font-size: 0;
+        }
     }
 }
