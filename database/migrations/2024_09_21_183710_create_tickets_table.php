@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->text('uuid');
+            $table->integer('raffle_id');
+            $table->boolean('sold')->default(false);
             $table->timestamps();
         });
     }

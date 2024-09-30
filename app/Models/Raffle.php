@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Raffle extends Model
 {
@@ -15,7 +16,8 @@ class Raffle extends Model
         'image',
         'end',
         'price',
-        'tickets'
+        'discount_price',
+        'tickets_count'
     ];
 
     public function categories(): BelongsTo
@@ -23,13 +25,21 @@ class Raffle extends Model
         return $this->belongsTo(Category::class);
     }
 
-
     protected static function booted()
     {
 
-        static::creating(function ($raffle) {
-            Ticket::factory(10)->create();
+        static::created(function ($raffle) {
+            // dd($raffle->id);
+            Ticket::factory($raffle->tickets_count)->create([
+                'raffle_id' => $raffle->id
+            ]);
         });
+
+    }
+
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class);
     }
 
 }

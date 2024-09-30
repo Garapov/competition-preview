@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\RaffleResource\Pages;
 
 use App\Filament\Resources\RaffleResource;
+use App\Filament\Resources\RaffleResource\Widgets\TicketsChart;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
@@ -16,4 +17,11 @@ class EditRaffle extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    protected function getFooterWidgets(): array
+    {
+        return [
+            TicketsChart::class
+        ];
+    }
+
 }

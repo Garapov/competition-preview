@@ -18,6 +18,7 @@ class TicketFactory extends Factory
     {
         return [
             'uuid' => $this->faker->lexify('id-????????-') . $this->faker->numerify('##################'),
+            'raffle_id' => $this->faker->numerify('#')
         ];
     }
 }

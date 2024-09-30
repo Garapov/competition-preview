@@ -1,4 +1,4 @@
-<div class="raffle_card {{ $class }}">
+<div class="raffle_card {{ $class }}" wire:poll.100ms>
     <div class="raffle_card__image">
         <img src="{{ $image }}" alt="">
     </div>
@@ -17,7 +17,7 @@
     <div class="raffle_card__row">
     <div class="raffle_card__icon raffle_card__icon--placeholder"></div>
         @if ($seconds > 0)
-            <div class="raffle_card__end" wire:poll.1000ms>
+            <div class="raffle_card__end" >
                 <div class="raffle_card__end-block">
                     <div class="number">
                         @if ($dates < 10)
@@ -65,7 +65,7 @@
             </div>
         @else
             <div class="raffle_card__end raffle_card__end--ended">
-                ended {{ $endDate->diffForHumans() }}
+                Ended {{ $endDate->diffForHumans() }}
             </div>
         @endif
 
@@ -77,26 +77,38 @@
         </div>
     </div>
 
-    <div class="raffle_card__solded">
-        <div class="raffle_card__solded-title">Sold</div>
-        <div class="raffle_card__solded-progress">
-            <div class="raffle_card__solded-progress-in" style="--width: {{ rand(10, 100) }}%;"></div>
+    @if ($tickets)
+        @php
+           $sold_tickets_count = count($tickets->where('sold', true));
+        @endphp
+        <div class="raffle_card__solded">
+            <div class="raffle_card__solded-title">Sold</div>
+            <div class="raffle_card__solded-progress">
+                <div class="raffle_card__solded-progress-in" style="--width: {{ $sold_tickets_count * 100 / count($tickets) }}%;"></div>
+            </div>
+            <div class="raffle_card__solded-percents">
+                <span>{{ $sold_tickets_count * 100 / count($tickets) }}%</span>
+                <span>/</span>
+                <span>{{ count($tickets) }}</span>
+            </div>
         </div>
-        <div class="raffle_card__solded-percents">
-            <span>51%</span>
-            <span>/</span>
-            <span>5000</span>
-        </div>
-    </div>
-
+    @endif
+    
+    @if ($seconds > 0)
     <div class="raffle_card__bottom">
         <div class="raffle_card__bottom-left">
-            <div class="raffle_card__oldprice">
-                <div class="left">£20.99</div>
-                <div class="right">EARLY BIRD</div>
-            </div>
+            @if ($discount_price)
+                <div class="raffle_card__oldprice">
+                    <div class="left">£{{ $price }}</div>
+                    <div class="right">EARLY BIRD</div>
+                </div>
+            @endif
             <div class="raffle_card__price">
-                <div class="left">£1.99</div>
+                @if ($discount_price)
+                    <div class="left">£{{ $discount_price }}</div>
+                @else
+                    <div class="left">£{{ $price }}</div>
+                @endif
                 <div class="right">Per entry</div>
             </div>
         </div>
@@ -118,4 +130,5 @@
             </button>
         </div>
     </div>
+    @endif
 </div>

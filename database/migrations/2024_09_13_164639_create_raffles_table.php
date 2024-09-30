@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('image');
             $table->dateTime('end', precision: 0);
             $table->float('price', precision: 2);
-            $table->integer('tickets');
+            $table->float('discount_price', precision: 2)->nullable();
+            $table->integer('tickets_count');
             $table->integer('category_id');
             $table->timestamps();
         });

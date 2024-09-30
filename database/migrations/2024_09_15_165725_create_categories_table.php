@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->boolean('active')->default('false');
             $table->string('name');
+            $table->string('title');
+            $table->string('subtitle');
             $table->string('icon')->nullable();
             $table->timestamps();
         });

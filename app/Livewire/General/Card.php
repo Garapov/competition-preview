@@ -10,6 +10,9 @@ class Card extends Component
     public $image = '';
     public $name = '';
     public $end = '';
+    public $price = '';
+    public $discount_price = '';
+    public $tickets = '';
     
     public function render()
     {

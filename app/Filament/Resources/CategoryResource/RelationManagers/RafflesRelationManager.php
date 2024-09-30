@@ -28,8 +28,11 @@ class RafflesRelationManager extends RelationManager
                 Forms\Components\TextInput::make('price')
                     ->required()
                     ->numeric()
-                    ->prefix('$'),
-                Forms\Components\TextInput::make('tickets')
+                    ->prefix('£'),
+                Forms\Components\TextInput::make('discount_price')
+                    ->numeric()
+                    ->prefix('£'),
+                Forms\Components\TextInput::make('tickets_count')
                     ->required()
                     ->numeric(),
             ]);
@@ -49,7 +52,7 @@ class RafflesRelationManager extends RelationManager
                 Tables\Columns\TextColumn::make('price')
                     ->money()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('tickets')
+                Tables\Columns\TextColumn::make('tickets_count')
                     ->numeric()
                     ->sortable(),
             ])
