@@ -25,6 +25,10 @@
                 <img src="{{ asset('assets/images/wheel_button.png') }}" alt="">
             </div>
 
+            <div class="main_wheel__badge" wire:click="spin_wheel">
+                <img src="{{ asset('assets/images/wheel_badge.png') }}" alt="">
+            </div>
+
             
         </div>
     </div>
