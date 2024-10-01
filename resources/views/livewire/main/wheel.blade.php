@@ -28,8 +28,31 @@
             <div class="main_wheel__badge" wire:click="spin_wheel">
                 <img src="{{ asset('assets/images/wheel_badge.png') }}" alt="">
             </div>
+            <div class="main_wheel__butterfyes" wire:click="spin_wheel">
+                <img src="{{ asset('assets/images/wheel_butterfyes.png') }}" alt="">
+            </div>
 
             
+        </div>
+        <div class="main_wheel__bottom">
+            <div class="main_wheel__info">
+                <div class="title">What do the numbers mean?</div>
+                <div class="text">
+                    Each number on the wheel corresponds to a different prize.<br />
+                    Check out the <a href="#">full BONUS list here</a> to see what you could win
+                </div>
+            </div>
+            <div class="main_wheel__scroll">
+                <div class="arrow"><img src="{{ asset('assets/images/arrow.svg') }}" alt=""></div>
+                <div class="title">Scroll down </div>
+                <div class="text">For daily deals and surprises waiting just for you</div>
+            </div>
+            <div class="main_wheel__info">
+                <div class="title">Terms and Conditions Apply</div>
+                <div class="text">
+                    By spinning the wheel, you agree to our <a href="#">Terms and Conditions</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

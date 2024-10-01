@@ -29,5 +29,19 @@
             'category' => $third_category
         ], key($third_category->id))
     @endif
+
+    @php
+        $fourth_category = \App\Models\Category::where([
+            ['id', '=', 4],
+            ['active', '=', true],
+        ])->first();
+    @endphp
+    @if ($fourth_category)
+        @livewire('general.category', [
+            'category' => $fourth_category
+        ], key($fourth_category->id))
+    @endif
+
+    @livewire('main.giveaway')
     <img src="{{ asset('assets/images/content.svg') }}" alt="">
 </x-guest-layout>

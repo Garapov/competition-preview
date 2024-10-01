@@ -4,6 +4,7 @@ body {
     margin: 0;
     // background: linear-gradient(to bottom, #E8F0FF 0%, #E3D3F7 52%, #F7EDD3 69%, #F7D3F5 100%);
     background: #FFFFFF;
+    font-family: "Segoe UI", sans-serif;
 }
 
 
@@ -594,6 +595,7 @@ body {
 .main_wheel {
     &__in {
         padding: 100px 120px;
+        // overflow: hidden;
     }
     &__title {
         font-weight: 400;
@@ -663,6 +665,13 @@ body {
         left: calc(100% - 80px);
         top: 100px;
     }
+    &__butterfyes {
+        position: absolute;
+        left: 50%;
+        top: 80px;
+        transform: translateX(-50%);
+        pointer-events: none;
+    }
     &__segment {
         position: absolute;
         // width: 93px;
@@ -694,4 +703,97 @@ body {
         }
     }
 
+    &__bottom {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 86px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #111;
+        }
+        .text {
+            font-weight: 350;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #111;
+            a {
+                text-decoration: underline;
+                text-decoration-skip-ink: none;
+                color: #9947cc;
+            }
+        }
+    }
+
+    &__scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        .arrow {
+            width: 50px;
+            font-size: 0;
+        }
+        .title,
+        .text {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.4;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: #333;
+        }
+        .title {
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+
+
+.giveaway {
+    padding: 203px 280px 96px 120px;
+    background: var(--background);
+    &__in {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+    &__left {
+        width: 670px;
+    }
+
+    &__left-text {
+        font-family: "Prata", serif;
+        font-weight: 400;
+        font-size: 28px;
+        text-shadow: 3px 3px #B53A1F;
+        line-height: 1.2;
+        letter-spacing: 0.2em;
+        color: #fff;
+    }
+    &__left-title {
+        font-family: "Prata", serif;
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #fff;
+        text-shadow: 3px 3px #b53a1f;
+        margin-bottom: 32px;
+    }
+    &__right {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

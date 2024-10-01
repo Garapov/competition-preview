@@ -11,20 +11,15 @@ class Wheel extends Component
     public $spinning_deg = 0;
 
     public $sectors = [
-        '1',
-        '222',
-        '33',
         'jackpot',
-        '5',
-        '23',
         '7',
-        '37',
-        '999',
-        '22',
-        '189',
-        '82',
-        '444',
-        '555'
+        '33',
+        '8',
+        '21',
+        '777',
+        '13',
+        '3',
+        '9'
     ];
 
     public function render()
