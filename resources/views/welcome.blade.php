@@ -30,6 +30,9 @@
         ], key($third_category->id))
     @endif
 
+    @livewire('main.elite')
+
+
     @php
         $fourth_category = \App\Models\Category::where([
             ['id', '=', 4],
@@ -40,6 +43,18 @@
         @livewire('general.category', [
             'category' => $fourth_category
         ], key($fourth_category->id))
+    @endif
+
+    @php
+        $fiveth_category = \App\Models\Category::where([
+            ['id', '=', 5],
+            ['active', '=', true],
+        ])->first();
+    @endphp
+    @if ($fiveth_category)
+        @livewire('general.category', [
+            'category' => $fiveth_category
+        ], key($fiveth_category->id))
     @endif
 
     @livewire('main.giveaway')

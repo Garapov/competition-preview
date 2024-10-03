@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('discount_price', precision: 2)->nullable();
             $table->integer('tickets_count');
             $table->integer('category_id');
+            $table->boolean('is_elite')->default(false);
             $table->timestamps();
         });
     }

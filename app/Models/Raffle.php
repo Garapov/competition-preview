@@ -17,7 +17,8 @@ class Raffle extends Model
         'end',
         'price',
         'discount_price',
-        'tickets_count'
+        'tickets_count',
+        'is_elite'
     ];
 
     public function categories(): BelongsTo

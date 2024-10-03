@@ -34,6 +34,7 @@ class RaffleResource extends Resource
                     ->required()
                     ->numeric()
                     ->prefix('$'),
+                Forms\Components\Toggle::make('is_elite'),
             ]);
     }
 

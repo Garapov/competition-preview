@@ -35,6 +35,7 @@ class RafflesRelationManager extends RelationManager
                 Forms\Components\TextInput::make('tickets_count')
                     ->required()
                     ->numeric(),
+                Forms\Components\Toggle::make('is_elite'),
             ]);
     }
 
