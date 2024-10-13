@@ -58,5 +58,5 @@
     @endif
 
     @livewire('main.giveaway')
-    <img src="{{ asset('assets/images/content.svg') }}" alt="">
+    @livewire('main.join')
 </x-guest-layout>
