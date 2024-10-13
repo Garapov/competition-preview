@@ -5,7 +5,7 @@
         @forelse ($category->raffles as $raffle)
             @livewire('general.card', [
                 'class' => 'main_categories__product',
-                'image' => asset($raffle->image),
+                'image' => asset('storage/' . $raffle->image),
                 'name' => $raffle->name,
                 'end' => $raffle->end,
                 'price' => $raffle->price,
