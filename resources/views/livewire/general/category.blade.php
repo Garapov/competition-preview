@@ -10,7 +10,8 @@
                 'end' => $raffle->end,
                 'price' => $raffle->price,
                 'discount_price' => $raffle->discount_price,
-                'tickets' => $raffle->tickets
+                'tickets' => $raffle->tickets,
+                'id' => $raffle->id
             ], key($raffle->id))      
         @empty
             no products in this category

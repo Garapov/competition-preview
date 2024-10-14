@@ -59,4 +59,6 @@
 
     @livewire('main.giveaway')
     @livewire('main.join')
+
+    @livewire('general.cart-modal')
 </x-guest-layout>

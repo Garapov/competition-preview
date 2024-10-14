@@ -113,7 +113,7 @@
             </div>
         </div>
         <div class="raffle_card__bottom-right">
-            <button class="raffle_card__enter_button">
+            <button class="raffle_card__enter_button" wire:click="openModal">
                 <span class="text">ENTER NOW</span>
                 <span class="icon">
                     <svg width="100%" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -131,4 +131,7 @@
         </div>
     </div>
     @endif
+
+    {{ session()->get('modalProductId') }}
+        {{-- @livewire('general.cart-modal') --}}
 </div>
