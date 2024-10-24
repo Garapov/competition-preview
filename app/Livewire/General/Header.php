@@ -10,4 +10,5 @@ class Header extends Component
     {
         return view('livewire.general.header');
     }
+    
 }
