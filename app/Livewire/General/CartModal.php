@@ -4,7 +4,6 @@ namespace App\Livewire\General;
 
 use App\Models\Raffle;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Session;
 use Livewire\Component;
 
 
@@ -15,9 +14,6 @@ class CartModal extends Component
 
     public $activeTab = 'online';
     public $count = 10;
-
-    #[Session(key: 'cart')]
-    public $cart;
 
     public function render()
     {
@@ -68,15 +64,26 @@ class CartModal extends Component
 
     public function addToCart()
     {
-        if (isset($this->cart[$this->raffle->id])) {
-            // Update quantity if product is already in the cart
-            $this->cart[$this->raffle->id]['quantity'] += $this->count;
-        } else {
-            $this->cart[$this->raffle->id] = [
-                'id' => $this->raffle->id,
-                'quantity' => $this->count,
-            ];
-        }
+        // if (isset($this->cart[$this->raffle->id])) {
+        //     // Update quantity if product is already in the cart
+        //     $this->cart[$this->raffle->id]['quantity'] += $this->count;
+        // } else {
+        //     $this->cart[$this->raffle->id] = [
+        //         'id' => $this->raffle->id,
+        //         'quantity' => $this->count,
+        //     ];
+        // }
+
+
+        \Cart::add([
+            'id' => 'cart-product-' . $this->raffle->id,
+            'name' => $this->raffle->name,
+            'price' => $this->raffle->price,
+            'quantity' => $this->count,
+            'attributes' => array(
+                'image' => $this->raffle->image,
+            )
+        ]);
 
         $this->closeModal();
 

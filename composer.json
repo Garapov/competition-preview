@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "darryldecode/cart": "^4.2",
         "filament/filament": "3.2.57",
         "guava/filament-icon-picker": "^2.2",
         "hexters/hexa-lite": "^1.0",
