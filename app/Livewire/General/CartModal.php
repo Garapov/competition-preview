@@ -74,10 +74,7 @@ class CartModal extends Component
         } else {
             $this->cart[$this->raffle->id] = [
                 'id' => $this->raffle->id,
-                'name' => $this->raffle->name,
-                'price' => $this->raffle->price,
                 'quantity' => $this->count,
-                "poster" => $this->raffle->image
             ];
         }
 

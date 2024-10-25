@@ -11,9 +11,7 @@ class Minicart extends Component
 {
     public function render()
     {
-        return view('livewire.general.minicart', [
-            'products' => $this->products
-        ]);
+        return view('livewire.general.minicart');
     }
 
     #[Computed()]
