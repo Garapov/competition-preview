@@ -1,6 +1,12 @@
 // import './bootstrap';
 
+import Alpine from 'alpinejs'
+import persist from '@alpinejs/persist'
 import Glide from '@glidejs/glide'
+
+// import cart from './cart.js'
+
+Alpine.plugin(persist)
 
 
 window.addEventListener('wheel_spin', (event) => {
