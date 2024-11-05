@@ -4,7 +4,6 @@
         <div class="general__modal raffle__modal" style="--acc: url('{{ asset('assets/images/general_acc.png') }}') 50% 50% / cover no-repeat;" x-data="{
             activeTab: 'online',
             count: 20,
-            cart: $persist([]),
             raffle: {
                 id: {{ $raffle->id }},
                 image: '{{ asset('storage/' . $raffle->image) }}',
@@ -25,18 +24,13 @@
                 this.count = $count;
             },
             addToCart() {
+                $store.cart.addToCart({
+                    raffle: this.raffle,
+                    count: this.count
+                });
                 
-                if  (this.cart[this.raffle.id]) {
-                    this.cart[this.raffle.id].count += this.count;
-                } else {
-                    this.cart[this.raffle.id] = {
-                        ...this.raffle,
-                        count: this.count,
-                    }
-                }
-
                 $wire.closeModal()
-            } 
+            }
         }">
             <div class="general__modal__wrap">
                 <div class="general__modal_in" wire:click.outside="closeModal">

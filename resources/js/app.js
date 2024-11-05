@@ -1,12 +1,27 @@
 // import './bootstrap';
-
-import Alpine from 'alpinejs'
-import persist from '@alpinejs/persist'
 import Glide from '@glidejs/glide'
 
-// import cart from './cart.js'
 
-Alpine.plugin(persist)
+import initCart from './cart.js'
+
+initCart();
+
+// Alpine.plugin(persist)
+
+
+// Alpine.store('cart2', {
+//     list: this.$persist([]),
+ 
+//     add() {
+//         this.list = ['asdasdasdadsadsadsdsa']
+//     }
+// })
+
+
+
+
+
+
 
 
 window.addEventListener('wheel_spin', (event) => {
