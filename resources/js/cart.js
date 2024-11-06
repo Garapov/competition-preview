@@ -5,7 +5,6 @@ export default () => {
             list: Alpine.$persist([]).as('cart'),
                 
             removeFromCart(raffleId) {
-                console.log(raffleId);
                 this.list[raffleId] = null
             },
          
@@ -19,7 +18,14 @@ export default () => {
                         count: count,
                     }
                 }
-            } 
+            },
+            increase(raffleId) {
+                this.list[raffleId].count++;
+            },
+            decrease(raffleId) {
+                this.list[raffleId].count--;
+                if (this.list[raffleId].count < 1) this.list[raffleId] = null;
+            }
         })
     });
 }
