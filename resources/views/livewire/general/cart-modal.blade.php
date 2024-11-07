@@ -8,7 +8,7 @@
                 id: {{ $raffle->id }},
                 image: '{{ asset('storage/' . $raffle->image) }}',
                 name: '{{ $raffle->name }}',
-                discount_price: {{ $raffle->discount_price }},
+                discount_price: {{ $raffle->discount_price ?? 0 }},
                 price: {{ $raffle->price }}
             },
             plus() {

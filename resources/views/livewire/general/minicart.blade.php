@@ -6,7 +6,7 @@
         <div class="count" x-text="$store.cart.list.filter(item => item != null).length"></div>
     </div>
     
-    <div class="header__minicart-body" x-show="isOpened">
+    <div class="header__minicart-body" x-show="isOpened" @click.outside="isOpened = false">
         <div class="header__minicart-products">
             {{-- {{ print_r($cart) }} --}}
             <template x-for="raffle in $store.cart.list.filter(item => item != null)" :key="raffle.id">

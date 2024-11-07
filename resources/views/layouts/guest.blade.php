@@ -20,9 +20,17 @@
     <body>
         @livewire('general.header')
 
-        <div class="font-sans text-gray-900 dark:text-gray-100 antialiased">
-            {{ $slot }}
-        </div>
+        <main class="general__main">
+            <div class="general__content">
+                @if (isset($pagetitle))
+                    <h1 class="general__pagetitle">{{ $pagetitle }}</h1>
+                @endif
+                
+                {{ $slot }}
+            </div>
+
+            
+        </main>
 
         @livewire('general.footer')
 

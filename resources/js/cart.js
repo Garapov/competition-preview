@@ -25,7 +25,17 @@ export default () => {
             decrease(raffleId) {
                 this.list[raffleId].count--;
                 if (this.list[raffleId].count < 1) this.list[raffleId] = null;
+            },
+
+            getTotalPrice() {
+                let price = 0.00;
+                this.list.map(item => {
+                    if (item != null) price += item.count * item.price;
+                })
+                return price;
             }
         })
     });
 }
+
+// TODO: При изменении данных в админке не обновляется в корзине
