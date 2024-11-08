@@ -13,9 +13,11 @@
             <template x-for="raffle in $store.cart.list.filter(item => item != null)" :key="raffle.id">
                 <div class="cart_total__product cart_total__grid">
                     <div class="cart_total__grid-item cart_total__product_image">
-                        <img :src="raffle.image" alt="" width="100%">
+                        <div class="cart_total__product_image-in">
+                            <img :src="raffle.image" alt="" width="100%">
+                        </div>
                     </div>
-                    <div class="cart_total__grid-item cart_total__product_name" x-text="raffle.name"></div>
+                    <div class="cart_total__grid-item cart_total__product_name" x-text="raffle.name" :title="raffle.name"></div>
                     <div class="cart_total__grid-item cart_total__product_price cart_total__product_price--text" x-text="'£' + raffle.price"></div>
                     <div class="cart_total__grid-item cart_total__product_count">
                         <div class="cart_total__product_count_button" @click="$store.cart.decrease(raffle.id)">
