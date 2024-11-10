@@ -12,9 +12,9 @@
         </div>
     </div>
     <div class="cart_page__summary-buttons">
-        <div class="cart_page__summary-checkout">
+        <a href="{{ route('checkout') }}" class="cart_page__summary-checkout" wire:navigate>
             proceed to checkout
-        </div>
+        </a>
         <div class="cart_page__summary-payments">
             <svg xmlns="http://www.w3.org/2000/svg" width="228" height="42" viewBox="0 0 228 42" fill="none">
                 <path d="M29.8487 11.6671H13.5154V30.3338H29.8487V11.6671Z" fill="white"/>

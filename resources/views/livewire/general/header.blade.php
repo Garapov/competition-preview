@@ -5,6 +5,7 @@
             <a href="{{ route('welcome') }}" class="header__logo" wire:navigate>TOO MUCH</a>
             <nav class="header__menu">
                 <ul>
+                    <!-- TODO: сделать вывод меню из админки  -->
                     <li><a href="#">Competitions</a></li>
                     <li><a href="#">Competitions</a></li>
                     <li><a href="#">Instant Win</a></li>
@@ -13,6 +14,7 @@
                 </ul>
             </nav>
         </div>
+        
         <div class="header__right">
             @livewire('general.payments')
             @livewire('general.header_auth')

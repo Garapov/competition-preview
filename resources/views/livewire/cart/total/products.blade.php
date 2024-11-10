@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="cart_total__grid-item cart_total__product_subtotal">
-                        <div class="cart_total__product_price--text" x-text="'£' + raffle.price * raffle.count"></div>
+                        <div class="cart_total__product_price--text" x-text="'£' + (raffle.price * raffle.count).toFixed(2)"></div>
                         <div class="cart_total__product_price_delete" @click="$store.cart.removeFromCart(raffle.id)">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.5959 1.599L18.3986 18.4017M1.59593 18.4017L9.99726 10.0003L18.3986 1.599" stroke="#333333" stroke-width="1.5" stroke-linecap="round" />

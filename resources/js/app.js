@@ -1,10 +1,13 @@
 // import './bootstrap';
 import Glide from '@glidejs/glide'
-
-
+import mask from '@alpinejs/mask'
 import initCart from './cart.js'
+import initSlider from './raffle_page_slider.js'
 
+
+Alpine.plugin(mask);
 initCart();
+initSlider();
 
 // Alpine.plugin(persist)
 

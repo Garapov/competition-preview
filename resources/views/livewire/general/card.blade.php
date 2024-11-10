@@ -2,7 +2,7 @@
     <div class="raffle_card__image">
         <img src="{{ $image }}" alt="">
     </div>
-    <div class="raffle_card__name">{{ $name }}</div>
+    <a href="{{ route('raffle', $id) }}" class="raffle_card__name" wire:navigate>{{ $name }}</a>
     @php
         $endDate = Carbon\Carbon::parse($end);
         $seconds = floor($endDate->diffInSeconds(Carbon\Carbon::now()) * -1);

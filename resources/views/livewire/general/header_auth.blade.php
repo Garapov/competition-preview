@@ -1,4 +1,5 @@
 <div class="header__auth" wire:poll>
+    <!-- TODO:Сделать открытиее форм с помощью alpine -->
     @if (!$user)
     <div class="header__auth-block header__auth-login">
         <div class="general__button general__button--regular" wire:click="toggleLoginForm">
@@ -38,7 +39,7 @@
             </span>
         </div>
         @if ($isRegisterFormOpened)
-        <form wire:submit.prevent="register" class="header__auth-popup" wire:transition wire:click.outside="closeLoginForm">
+        <form wire:submit.prevent="register" class="header__auth-popup" wire:transition wire:click.outside="closeRegisterForm">
             <div class="header__auth-title">Register</div>
             <div class="header__auth-form">
                 <input class="header__auth-input" type="text" placeholder="First name *" wire:model="first_name">
