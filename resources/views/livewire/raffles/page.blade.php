@@ -115,7 +115,7 @@
                 
             </div>
         </div>
-        <div class="raffle_page__right" x-data="raffle_page" x-init="setMaxCount({{$raffle->tickets_count}})">
+        <div class="raffle_page__right" x-data="raffle_page" x-init="init({{$raffle->tickets_count}})">
             <div class="raffle_page__right-top">
                 <div class="raffle_page__badges">
                     <div class="raffle_page__badge raffle_page__badge--yellow">DRAW TODAY</div>
@@ -209,7 +209,7 @@
                     <div class="raffle_page__right-count">
                         <div class="raffle_page__right-count-title">How many tickets?</div>
                         <div class="raffle_page__right-count-slider">
-                            <input type="range" x-model="count" min="1" max="{{$raffle->tickets_count}}">
+                            <input type="range" x-model="count" min="1" max="{{$raffle->tickets_count}}" id="slider1">
                         </div>
                     </div>
                     <div class="modal_amount__left">
