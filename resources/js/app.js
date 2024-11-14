@@ -4,7 +4,6 @@ import mask from '@alpinejs/mask'
 import initCart from './cart.js'
 import moment from 'moment';
 
-
 // import rafflePageSlider from './raffle_page_slider.js'
 
 // import rafflePage from './raffle_page.js'
