@@ -115,6 +115,120 @@
                 
             </div>
         </div>
-        <div class="raffle_page__right"></div>
-    </div>
+        <div class="raffle_page__right" x-data="raffle_page" x-init="setMaxCount({{$raffle->tickets_count}})">
+            <div class="raffle_page__right-top">
+                <div class="raffle_page__badges">
+                    <div class="raffle_page__badge raffle_page__badge--yellow">DRAW TODAY</div>
+                    <div class="raffle_page__badge raffle_page__badge--green">CASH ALTERNATIVE: £1000</div>
+                </div>
+                <h1 class="raffle_page__name">Iphone 15 Pro MaxIphone 15 Pro</h1>
+            </div>
+            <div class="raffle_page__right-middle">
+                <div class="raffle_page__right-prices">
+                    <div class="raffle_page__right-old_price">£20.99</div>
+                    <div class="raffle_page__right-price">
+                        <div class="price">£1.99</div>
+                        <div class="text">Per entry</div>
+                    </div>
+
+                    @php
+                        $endDate = Carbon\Carbon::parse($raffle->end);
+                        $seconds = floor($endDate->diffInSeconds(Carbon\Carbon::now()) * -1);
+
+                        $dates = floor($seconds / 3600 / 24) ;
+                        $hours = floor(($seconds / 3600) - ($dates * 24));
+                        $minutes = floor($seconds / 60) - ($dates * 24 * 60) - ($hours * 60);
+                        $endSeconds =  $seconds - (($dates * 24 * 60 * 60) + ($hours * 60 * 60) + ($minutes * 60));
+                        // $seconds = floor($endDate->diffInSeconds(Carbon\Carbon::now()) - ($dates * 24 * 60 * 60) - ($hours * 60 * 60) - ($minutes * 60));
+                    @endphp
+                    <div class="raffle_page__end">
+                        <div class="raffle_page__end-block">
+                            <div class="number">
+                                @if ($dates < 10 && $dates > 0)
+                                    0{{ $dates }}
+                                @else
+                                    {{ $dates }}
+                                @endif
+                                
+                            </div>
+                            <div class="type">days</div>
+                        </div>
+                        <div class="raffle_page__end-dots">:</div>
+                        <div class="raffle_page__end-block">
+                            <div class="number">
+                                @if ($hours < 10 && $hours > 0)
+                                    0{{ $hours }}
+                                @else
+                                    {{ $hours }}
+                                @endif
+                            </div>
+                            <div class="type">hours</div>
+                        </div>
+                        <div class="raffle_page__end-dots">:</div>
+                        <div class="raffle_page__end-block">
+                            <div class="number">
+                                @if ($minutes < 10 && $minutes > 0)
+                                    0{{ $minutes }}
+                                @else
+                                    {{ $minutes }}
+                                @endif
+                            </div>
+                            <div class="type">minutes</div>
+                        </div>
+                        <div class="raffle_page__end-dots">:</div>
+                        <div class="raffle_page__end-block">
+                            <div class="number">
+                                @if ($endSeconds < 10 && $endSeconds > 0)
+                                    0{{ $endSeconds }}
+                                @else
+                                    {{ $endSeconds }}
+                                @endif
+                            </div>
+                            <div class="type">seconds</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="raffle_card__solded">
+                    <div class="raffle_card__solded-title">Sold</div>
+                    <div class="raffle_card__solded-progress">
+                        <div class="raffle_card__solded-progress-in" style="--width: 0%;"></div>
+                    </div>
+                    <div class="raffle_card__solded-percents">
+                        <span>0%</span>
+                        <span>/</span>
+                        <span>1466</span>
+                    </div>
+                </div>
+            </div>
+            <div class="raffle_page__right-bottom">
+                <div class="raffle_page__right-card">
+                    <div class="general__modal_tabs">
+                        <div class="general__modal_tab general__modal_tab--active">Online entry</div>
+                        <div class="general__modal_tab">free postal entry</div>
+                    </div>
+                    <div class="raffle_page__right-count">
+                        <div class="raffle_page__right-count-title">How many tickets?</div>
+                        <div class="raffle_page__right-count-slider">
+                            <input type="range" x-model="count" min="1" max="{{$raffle->tickets_count}}">
+                        </div>
+                    </div>
+                    <div class="modal_amount__left">
+                        <div class="modal_amount__button" @click="minus">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.33203 16H26.6654" stroke="#333333" stroke-width="1.5" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div class="modal_amount__count">
+                            <input type="number" min="1" max="{{$raffle->tickets_count}}" x-model="count" @change="validateCount">
+                        </div>
+                        <div class="modal_amount__button" @click="plus">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.33203 16H26.6654M15.9987 26.6667V16L15.9987 5.33337" stroke="#333333" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>65 5
 </div>

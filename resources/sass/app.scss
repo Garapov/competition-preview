@@ -3185,4 +3185,135 @@ body {
         line-height: 1.4;
         color: #111;
     }
+
+    &__right-top {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+
+    &__badges {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+    }
+
+    &__badge {
+        padding: 11px 17px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        border-radius: 10px;
+        padding: 10px 30px;
+        min-width: 158px;
+        text-align: center;
+        box-sizing: border-box;
+        &--yellow {
+            background: #f9f3a1;
+            font-weight: 400;
+            font-size: 16px;
+            color: #333;
+        }
+        &--green {
+            background: #78b529;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            padding-top: 11px;
+            padding-bottom: 11px;
+        }
+    }
+    &__name {
+        font-family: "Prata", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 1.4;
+        color: #111;
+        margin: 0;
+    }
+    &__right-middle {
+        padding-top: 30px;
+        padding-bottom: 60px;
+        margin-top: 30px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &__right-prices {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__right-old_price {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1;
+        text-transform: uppercase;
+        text-align: center;
+        color: #777474;
+        text-decoration: line-through;
+    }
+    &__right-price {
+        display: flex;
+        align-items: flex-end;
+        gap: 11px;
+        .price {
+            font-weight: 600;
+            font-size: 60px;
+            line-height: 1;
+            text-transform: uppercase;
+            color: #9947cc;
+        }
+        .text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1;
+            color: #0a0a0a;
+        }
+    }
+    &__end {
+        padding: 15px 20px;
+        background: #fff;
+        border-radius: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    &__end-block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .number {
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+        }
+        .type {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.4;
+            text-align: center;
+            color: #333;
+        }
+    }
+    &__end-dots {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 0.8;
+        text-transform: uppercase;
+        color: #333;
+        // padding-top: 7px;
+    }
+
+    &__right-card{
+        padding: 50px;
+        background: #fff;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
 }

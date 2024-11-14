@@ -20,8 +20,8 @@
             validateCount() {
                 if (this.count < 1) this.count = 1;
             },
-            quickSelect($count) {
-                this.count = $count;
+            quickSelect(count) {
+                this.count = count;
             },
             addToCart() {
                 $store.cart.addToCart({
