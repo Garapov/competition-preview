@@ -21,6 +21,7 @@
         "@alpinejs/persist": "^3.14.3",
         "@glidejs/glide": "^3.6.2",
         "alpinejs": "^3.14.3",
+        "moment": "^2.30.1",
         "rangeslider-js": "^3.2.5"
     }
 }

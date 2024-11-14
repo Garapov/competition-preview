@@ -1,7 +1,25 @@
 <div class="raffle_page">
     <div class="raffle_page__in raffle_page__container">
         <div class="raffle_page__left">
-            <div class="raffle_page__slider" x-data="slider">
+            <div class="raffle_page__slider" x-data="{
+                glide: null,
+                activeSlide: 0,
+                init() {
+                    if (document.querySelector('.raffle_page__gallery-glide--js')) {
+                        this.glide = new glide_js('.raffle_page__gallery-glide--js', {
+                            gap: 0,
+                            autoplay: 3000
+                        }).mount()
+                        this.glide.on(['move.after'], () => {
+                            this.activeSlide = this.glide.index;                    
+                        })     
+                    }
+                },
+                changeSlide(id) {
+                    this.glide.go(`=${id}`);
+                    this.activeSlide = this.glide.index;
+                },
+            }">
                 <div class="raffle_page__thumbs">
                     <div class="raffle_page__thumb" @click="changeSlide(0)" :class="{'raffle_page__thumb--active': activeSlide == 0}">
                         <div class="raffle_page__thumb-in">
@@ -115,8 +133,56 @@
                 
             </div>
         </div>
-        <div class="raffle_page__right" x-data="raffle_page" x-init="init({{$raffle->tickets_count}})">
+        <div class="raffle_page__right" x-data="{
+            count: 10,
+            maxCount: {{$raffle->tickets_count}},
+            rangeSlider: null,
+            endDate: moment('{{$raffle->end}}'),
+            mounted: true,
+            remaining: {
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0
+            },
+            init() {
+                this.calculateRemainingTime();
+                this.mounted = true;
+            },
+            destroy() {
+                this.mounted = false;
+            },
+            plus() {
+                this.count++;
+                this.validateCount();
+            },
+            minus() {
+                if (this.count > 1) this.count--;
+                this.validateCount();
+            },
+            validateCount() {
+                if (this.count < 1) this.count = 1;
+                if (this.count > this.maxCount) this.count = this.maxCount;
+            },
+            calculateRemainingTime() {
+
+                let duration = moment.duration(this.endDate.diff(moment(new Date())));
+
+                this.remaining = {
+                    days: duration.days(),
+                    hours: duration.hours(),
+                    minutes: duration.minutes(),
+                    seconds: duration.seconds(),
+                    total: duration._milliseconds
+                }
+
+                setTimeout(() => {
+                    this.calculateRemainingTime();
+                }, 500);
+            }
+        }" >
             <div class="raffle_page__right-top">
+                <div x-text="remaining.seconds"></div>
                 <div class="raffle_page__badges">
                     <div class="raffle_page__badge raffle_page__badge--yellow">DRAW TODAY</div>
                     <div class="raffle_page__badge raffle_page__badge--green">CASH ALTERNATIVE: £1000</div>
@@ -130,60 +196,24 @@
                         <div class="price">£1.99</div>
                         <div class="text">Per entry</div>
                     </div>
-
-                    @php
-                        $endDate = Carbon\Carbon::parse($raffle->end);
-                        $seconds = floor($endDate->diffInSeconds(Carbon\Carbon::now()) * -1);
-
-                        $dates = floor($seconds / 3600 / 24) ;
-                        $hours = floor(($seconds / 3600) - ($dates * 24));
-                        $minutes = floor($seconds / 60) - ($dates * 24 * 60) - ($hours * 60);
-                        $endSeconds =  $seconds - (($dates * 24 * 60 * 60) + ($hours * 60 * 60) + ($minutes * 60));
-                        // $seconds = floor($endDate->diffInSeconds(Carbon\Carbon::now()) - ($dates * 24 * 60 * 60) - ($hours * 60 * 60) - ($minutes * 60));
-                    @endphp
-                    <div class="raffle_page__end">
+                    <div class="raffle_page__end" x-show="remaining.total > 0">
                         <div class="raffle_page__end-block">
-                            <div class="number">
-                                @if ($dates < 10 && $dates > 0)
-                                    0{{ $dates }}
-                                @else
-                                    {{ $dates }}
-                                @endif
-                                
-                            </div>
+                            <div class="number" x-text="remaining.days < 10 ? `0${remaining.days}`: remaining.days"></div>
                             <div class="type">days</div>
                         </div>
                         <div class="raffle_page__end-dots">:</div>
                         <div class="raffle_page__end-block">
-                            <div class="number">
-                                @if ($hours < 10 && $hours > 0)
-                                    0{{ $hours }}
-                                @else
-                                    {{ $hours }}
-                                @endif
-                            </div>
+                            <div class="number" x-text="remaining.hours < 10 ? `0${remaining.hours}`: remaining.hours"></div>
                             <div class="type">hours</div>
                         </div>
                         <div class="raffle_page__end-dots">:</div>
                         <div class="raffle_page__end-block">
-                            <div class="number">
-                                @if ($minutes < 10 && $minutes > 0)
-                                    0{{ $minutes }}
-                                @else
-                                    {{ $minutes }}
-                                @endif
-                            </div>
+                            <div class="number" x-text="remaining.minutes < 10 ? `0${remaining.minutes}`: remaining.minutes"></div>
                             <div class="type">minutes</div>
                         </div>
                         <div class="raffle_page__end-dots">:</div>
                         <div class="raffle_page__end-block">
-                            <div class="number">
-                                @if ($endSeconds < 10 && $endSeconds > 0)
-                                    0{{ $endSeconds }}
-                                @else
-                                    {{ $endSeconds }}
-                                @endif
-                            </div>
+                            <div class="number" x-text="remaining.seconds < 10 ? `0${remaining.seconds}`: remaining.seconds"></div>
                             <div class="type">seconds</div>
                         </div>
                     </div>
@@ -230,5 +260,5 @@
                 </div>
             </div>
         </div>
-    </div>65 5
+    </div>
 </div>
