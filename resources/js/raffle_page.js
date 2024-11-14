@@ -1,4 +1,4 @@
-import rangesliderJs from 'rangeslider-js'
+// import rangesliderJs from 'rangeslider-js'
 export default {
     count: 10,
     maxCount: 10,
@@ -8,7 +8,6 @@ export default {
 
         if (document.getElementById('slider1')) {
             this.initRangeSlider();
-            console.log(rangesliderJs);
             
         }
     },
@@ -30,7 +29,7 @@ export default {
         this.maxCount = count;
     },
     initRangeSlider() {
-        this.rangeSlider = rangesliderJs.create(document.getElementById('slider1'))
+        // this.rangeSlider = rangesliderJs.create(document.getElementById('slider1'))
 
     
         
