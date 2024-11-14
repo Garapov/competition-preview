@@ -166,6 +166,8 @@
             },
             calculateRemainingTime() {
 
+                if (!this.mounted) return;
+
                 let duration = moment.duration(this.endDate.diff(moment(new Date())));
 
                 this.remaining = {
