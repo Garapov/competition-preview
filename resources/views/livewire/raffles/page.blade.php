@@ -184,7 +184,6 @@
             }
         }" >
             <div class="raffle_page__right-top">
-                <div x-text="remaining.seconds"></div>
                 <div class="raffle_page__badges">
                     <div class="raffle_page__badge raffle_page__badge--yellow">DRAW TODAY</div>
                     <div class="raffle_page__badge raffle_page__badge--green">CASH ALTERNATIVE: £1000</div>
@@ -259,8 +258,51 @@
                                 </svg>
                         </div>
                     </div>
+                    <div class="raffle_page__right-buy">
+                        <div class="raffle_page__right-buton">
+                            <div class="text">ENTER NOW</div>
+                            <div class="icon">
+                                <svg width="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_3092_20218)">
+                                        <path d="M17.5 6.5C17.5 6.46072 17.4996 6.42155 17.4987 6.38248C17.4362 3.67534 15.2222 1.5 12.5 1.5C9.79866 1.5 7.59765 3.64225 7.50318 6.32056C7.50108 6.38012 7.50002 6.43993 7.50002 6.5M17.5 6.5H7.50002M17.5 6.5H18.8087C20.8944 6.5 21.9373 6.5 22.5335 7.16616C23.1298 7.83231 23.0146 8.86879 22.7843 10.9417L22.4884 13.6043C22.0183 17.8356 21.7832 19.9513 20.3594 21.2256C18.9356 22.5 16.7904 22.5 12.5 22.5C8.20962 22.5 6.06443 22.5 4.64063 21.2256C3.21683 19.9513 2.98176 17.8356 2.51161 13.6043L2.21577 10.9417C1.98544 8.86879 1.87028 7.83231 2.46652 7.16616C3.06276 6.5 4.10561 6.5 6.1913 6.5H7.50002M6.50002 10.5L7.10002 11.1C10.0824 14.0823 14.9177 14.0823 17.9 11.1L18.5 10.5" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_3092_20218">
+                                        <rect width="24" height="24" fill="white" transform="translate(0.5 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="raffle_page__right-max">
+                            <div class="item">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%"  viewBox="0 0 25 24" fill="none">
+                                        <path d="M2.5 8.44444C2.5 5.98985 4.48985 4 6.94444 4H18.0556C20.5102 4 22.5 5.98985 22.5 8.44444C22.5 8.98773 22.1884 9.48288 21.6986 9.71798L21.2113 9.95192C19.493 10.7767 19.493 13.2233 21.2113 14.0481L21.6986 14.282C22.1884 14.5171 22.5 15.0123 22.5 15.5556C22.5 18.0102 20.5102 20 18.0556 20H6.94444C4.48985 20 2.5 18.0102 2.5 15.5556C2.5 15.0123 2.81157 14.5171 3.30135 14.282L3.78872 14.0481C5.50702 13.2233 5.50702 10.7767 3.78872 9.95192L3.30135 9.71798C2.81157 9.48288 2.5 8.98773 2.5 8.44444Z" stroke="#2D264B" stroke-width="1.5"/>
+                                        <path d="M14.5 4L14.5 20" stroke="#2D264B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    Max entries per user: 5000
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%"  viewBox="0 0 25 24" fill="none">
+                                        <path d="M2.5 8.44444C2.5 5.98985 4.48985 4 6.94444 4H18.0556C20.5102 4 22.5 5.98985 22.5 8.44444C22.5 8.98773 22.1884 9.48288 21.6986 9.71798L21.2113 9.95192C19.493 10.7767 19.493 13.2233 21.2113 14.0481L21.6986 14.282C22.1884 14.5171 22.5 15.0123 22.5 15.5556C22.5 18.0102 20.5102 20 18.0556 20H6.94444C4.48985 20 2.5 18.0102 2.5 15.5556C2.5 15.0123 2.81157 14.5171 3.30135 14.282L3.78872 14.0481C5.50702 13.2233 5.50702 10.7767 3.78872 9.95192L3.30135 9.71798C2.81157 9.48288 2.5 8.98773 2.5 8.44444Z" stroke="#2D264B" stroke-width="1.5"/>
+                                        <path d="M14.5 4L14.5 20" stroke="#2D264B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 3"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    Max entries: 100000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    @livewire('raffles.similar')
 </div>

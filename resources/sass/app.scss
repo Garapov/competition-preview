@@ -854,6 +854,9 @@ body {
     padding: 30px;
     box-sizing: border-box;
     font-family: "Segoe UI";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &__image {
         font-size: 0;
         aspect-ratio: 100/68;
@@ -3315,5 +3318,169 @@ body {
         display: flex;
         flex-direction: column;
         gap: 22px;
+        .modal_amount__left {
+            width: 100%;
+        }
+    }
+    &__right-count {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 10px;
+    }
+    &__right-count-title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #111;
+    }
+    &__right-count-slider {
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px;
+            background: #AC74F6;
+        }
+          
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: ew-resize;
+            box-shadow: inset 0 0 0 10px #AC74F6;
+            transition: background .3s ease-in-out;
+        }
+          
+        input[type=range]::-webkit-slider-runnable-track  {
+            -webkit-appearance: none;
+            box-shadow: none;
+            border: none;
+            background: transparent;
+        }
+    }
+    &__right-buy {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+    &__right-buton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        box-shadow: 0 20px 20px 0 rgba(172, 116, 246, 0.2);
+        background: #9947cc;
+        border-radius: 10px;
+        padding: 15px 30px;
+        cursor: pointer;
+        .text {
+            font-weight: 700;
+            font-size: 18px; 
+            line-height: 1.4;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+        }
+        .icon {
+            width: 24px;
+            font-size: 0;
+        }
+    }
+    &__right-max {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .icon {
+            width: 24px;
+            font-size: 0;
+        }
+        .text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #111;
+        }
+    }
+    &__similar {
+        overflow: hidden;
+        .glide__track {
+            overflow: visible;
+        }
+    }
+    &__similar-container {
+        padding-left: 156px;
+        padding-right: 156px;
+    }
+    &__similar-product {
+        padding: 0;
+        border-radius: 0;
+    }
+    &__similar-bottom {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: #fff;
+        .glide__slides {
+            display: flex;
+            align-items: stretch;
+        }
+    }
+    &__similar-product {
+        height: auto;
+    }
+    &__similar-top {
+        cursor: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 17px;
+        padding-bottom: 17px;
+    }
+    &__similar-title {
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.2;
+        color: #9947cc;
+    }
+    &__arrows {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+    &__arrow {
+        width: 53px;
+        height: 53px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ac74f6;
+        cursor: pointer;
+        transition: all .3s ease;
+        svg path {
+            stroke: #ac74f6;
+            transition: all .3s ease;
+        }
+        &.glide__arrow--disabled {
+            opacity: 1;
+            background: #EEEEEE;
+            border-color: #EEEEEE;
+            cursor: not-allowed;
+            svg path {
+                stroke: #2D264B;
+            }
+        }
+        &--prev {}
+        &--next {
+            transform: rotate(180deg);
+        }
     }
 }

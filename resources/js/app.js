@@ -21,6 +21,16 @@ document.addEventListener('alpine:init', () => {
 Alpine.plugin(mask);
 initCart();
 
+
+document.addEventListener('livewire:init', () => {
+    Livewire.on('open-cart-modal', (event) => {
+        var resizeEvent = new Event('resize');
+        setTimeout(() => {
+            window.dispatchEvent(resizeEvent);
+        }, 0)
+    });
+ });
+
 // Alpine.plugin(persist)
 
 
