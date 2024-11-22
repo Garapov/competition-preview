@@ -2,6 +2,7 @@
 import Glide from '@glidejs/glide'
 import mask from '@alpinejs/mask'
 import initCart from './cart.js'
+import initFavorites from './favorites.js'
 import moment from 'moment';
 
 // import rafflePageSlider from './raffle_page_slider.js'
@@ -20,6 +21,7 @@ document.addEventListener('alpine:init', () => {
 
 Alpine.plugin(mask);
 initCart();
+initFavorites();
 
 
 document.addEventListener('livewire:init', () => {

@@ -18,6 +18,7 @@
         <div class="header__right">
             @livewire('general.payments')
             @livewire('general.header_auth')
+            @livewire('general.favorites')
             @livewire('general.minicart')
         </div>
     </div>

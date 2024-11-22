@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="cart_stocks__product-data">
-                <div class="cart_stocks__product-name">{{ $product->end }}</div>
+                <div class="cart_stocks__product-name">{{ $product->name }}</div>
                 <div class="cart_stocks__product-buttons">
                     <div class="left">
                         @if ($product->oldprice)

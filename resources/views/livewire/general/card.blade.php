@@ -1,4 +1,11 @@
-<div class="raffle_card {{ $class }}">
+<div class="raffle_card {{ $class }}" x-data="{
+    product: {{ \App\Models\Raffle::where('id', $id)->first() }},
+    addToFavorites() {
+        $store.favorites.addToFavorites({
+            raffle: this.product
+        })
+    }
+}">
     <div class="raffle_card__in-top">
         <div class="raffle_card__image">
             <img src="{{ $image }}" alt="">
@@ -72,7 +79,7 @@
                 </div>
             @endif
 
-            <div class="raffle_card__icon">
+            <div class="raffle_card__icon" @click="addToFavorites">
                 <svg width="100%" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="52" height="52" rx="10" fill="#F0E5FF" />
                     <path d="M33 22.7767C32.7932 22.1061 32.4228 21.476 31.8547 20.9128C31.4075 20.4694 30.9433 20.177 30.4776 20M24.3993 18.1459C22.7257 17.0843 20.0227 16.0803 17.6885 18.4607C12.1475 24.1114 21.6498 35 26 35C30.3501 35 39.8525 24.1114 34.3115 18.4607C31.9773 16.0803 29.2744 17.0843 27.6007 18.1459C26.655 18.7458 25.345 18.7458 24.3993 18.1459Z" stroke="#333333" stroke-width="1.5" stroke-linecap="round" />

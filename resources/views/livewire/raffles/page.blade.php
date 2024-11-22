@@ -139,6 +139,7 @@
             rangeSlider: null,
             endDate: moment('{{$raffle->end}}'),
             mounted: true,
+            raffle: {{ $raffle }},
             remaining: {
                 days: 0,
                 hours: 0,
@@ -148,6 +149,11 @@
             init() {
                 this.calculateRemainingTime();
                 this.mounted = true;
+                this.raffle = {
+                    ...this.raffle,
+                    image: '{{ asset('storage/'.$raffle->image) }}'
+                }
+                
             },
             destroy() {
                 this.mounted = false;
@@ -181,7 +187,14 @@
                 setTimeout(() => {
                     this.calculateRemainingTime();
                 }, 500);
+            },
+            addToCart() {        
+                $store.cart.addToCart({
+                    raffle: JSON.parse(JSON.stringify(this.raffle)),
+                    count: this.count
+                });
             }
+
         }" >
             <div class="raffle_page__right-top">
                 <div class="raffle_page__badges">
@@ -259,7 +272,7 @@
                         </div>
                     </div>
                     <div class="raffle_page__right-buy">
-                        <div class="raffle_page__right-buton">
+                        <div class="raffle_page__right-buton" @click="addToCart">
                             <div class="text">ENTER NOW</div>
                             <div class="icon">
                                 <svg width="100%" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

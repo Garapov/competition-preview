@@ -9,9 +9,10 @@ export default () => {
             },
          
             addToCart({raffle, count = 0}) {
+                console.log(raffle, count)
                     
                 if  (this.list[raffle.id]) {
-                    this.list[raffle.id].count += count;
+                    this.list[raffle.id].count += +count;
                 } else {
                     this.list[raffle.id] = {
                         ...raffle,
@@ -32,7 +33,7 @@ export default () => {
                 this.list.map(item => {
                     if (item != null) price += item.count * item.price;
                 })
-                return price;
+                return price.toFixed(2);
             }
         })
     });
