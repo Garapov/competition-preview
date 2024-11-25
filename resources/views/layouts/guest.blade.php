@@ -32,6 +32,7 @@
             
         </main>
 
+        @livewire('general.quickview')
         @livewire('general.footer')
 
         @livewireScripts

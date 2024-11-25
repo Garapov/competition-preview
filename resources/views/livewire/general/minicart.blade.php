@@ -56,49 +56,51 @@
                 <div class="header__minicart-products-delim"></div>
             </div>
         </template>
-        <div class="header__minicart-tabs" x-data="{
-            count: {{ floor($product_best->tickets_count * 1 / 100) }},
-            tab: 'best',
-            changeTab(tab) {
-                this.tab = tab;
-            },
-            setCount(count) {
-                this.count = count;
-            },
-            addToCart(product) {
-                $store.cart.addToCart({
-                    raffle: product,
-                    count: count
-                })
-            }
-        }">
-            <div class="header__minicart-products-tabs">
-                <div class="header__minicart-products-tab" :class="{'header__minicart-products-tab--active': tab == 'best'}"
-                    @click="changeTab('best')">best price</div>
-                <div class="header__minicart-products-tab" :class="{'header__minicart-products-tab--active': tab == 'soon'}"
-                    @click="changeTab('soon')">Ending Soon</div>
+        @if ($product_best && $product_soon)
+            <div class="header__minicart-tabs" x-data="{
+                count: {{ floor($product_best->tickets_count * 1 / 100) }},
+                tab: 'best',
+                changeTab(tab) {
+                    this.tab = tab;
+                },
+                setCount(count) {
+                    this.count = count;
+                },
+                addToCart(product) {
+                    $store.cart.addToCart({
+                        raffle: product,
+                        count: count
+                    })
+                }
+            }">
+                <div class="header__minicart-products-tabs">
+                    <div class="header__minicart-products-tab" :class="{'header__minicart-products-tab--active': tab == 'best'}"
+                        @click="changeTab('best')">best price</div>
+                    <div class="header__minicart-products-tab" :class="{'header__minicart-products-tab--active': tab == 'soon'}"
+                        @click="changeTab('soon')">Ending Soon</div>
+                </div>
+                <template x-if="tab == 'best'">
+                    <div>
+                        @livewire('cart.stocks.components.item', [
+                            'product' => $product_best,
+                            'title' => 'Complete your set with these',
+                            'icon' => asset('assets/images/thumb_up.png'),
+                            'badge' => 'best price'
+                        ])
+                    </div>
+                </template>
+                <template x-if="tab == 'soon'">
+                    <div>
+                        @livewire('cart.stocks.components.item', [
+                            'product' => $product_soon,
+                            'title' => 'Complete your set with these',
+                            'icon' => asset('assets/images/thumb_up.png'),
+                            'badge' => 'Ending Soon'
+                        ])
+                    </div>
+                </template>
             </div>
-            <template x-if="tab == 'best'">
-                <div>
-                    @livewire('cart.stocks.components.item', [
-                        'product' => $product_best,
-                        'title' => 'Complete your set with these',
-                        'icon' => asset('assets/images/thumb_up.png'),
-                        'badge' => 'best price'
-                    ])
-                </div>
-            </template>
-            <template x-if="tab == 'soon'">
-                <div>
-                    @livewire('cart.stocks.components.item', [
-                        'product' => $product_soon,
-                        'title' => 'Complete your set with these',
-                        'icon' => asset('assets/images/thumb_up.png'),
-                        'badge' => 'Ending Soon'
-                    ])
-                </div>
-            </template>
-        </div>
+        @endif
         <template x-if="$store.cart.list.filter(item => item != null).length > 0">
             <div class="header__minicart-summary">
                 <div class="header__minicart-summary-title">summary</div>

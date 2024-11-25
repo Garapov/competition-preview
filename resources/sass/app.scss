@@ -1146,6 +1146,30 @@ body {
         &--placeholder {
             pointer-events: none;
         }
+        &--active {
+            position: relative;
+            svg rect {
+                fill: #9947cc;
+            }
+            svg path {
+                stroke: #fff;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                background: #fff;
+                border-radius: 2px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(-45deg);
+                transition: all .3s ease;
+            }
+            &:hover:after {
+                width: 100%;
+            }
+        }
     }
     &__solded {
         display: flex;
@@ -3715,6 +3739,7 @@ body {
     &__item {
         display: flex;
         align-items: flex-start;
+        gap: 12px;
     }
     &__item-left {
         width: 99px;
@@ -3722,6 +3747,9 @@ body {
     &__item-image {
         padding-top: 100%;
         position: relative;
+        font-size: 0;
+        border-radius: 10px;
+        overflow: hidden;
         img {
             position: absolute;
             left: 0;
@@ -3730,6 +3758,39 @@ body {
             height: 100%;
             object-fit: cover;
             object-position: 50% 50%;
+        }
+    }
+    &__item-middle {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 140%;
+        color: #111;
+        width: calc(100% - 99px - 12px * 2 - 52px);
+    }
+    &__item-remove-button {
+        border-radius: 10px;
+        background: #ac74f6;
+        width: 52px;
+        height: 52px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            transition: all .3s ease;
+        }
+        &:hover:after {
+            width: 100%;
         }
     }
 }

@@ -3,6 +3,10 @@ export default () => {
 
         Alpine.store('favorites', {
             list: Alpine.$persist([]).as('favorites'),
+
+            ids() {
+                return this.list.filter(raffle => raffle != null).map(raffle => raffle.id);
+            },
                 
             removeFromFavorites(raffleId) {
                 this.list[raffleId] = null
