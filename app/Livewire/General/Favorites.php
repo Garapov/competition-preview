@@ -15,5 +15,10 @@ class Favorites extends Component
         return view('livewire.general.favorites');
     }
 
+    public function openModal($raffle_id)
+    {
+        $this->dispatch('open-quickview-modal', id: $raffle_id);
+    }
+
     
 }

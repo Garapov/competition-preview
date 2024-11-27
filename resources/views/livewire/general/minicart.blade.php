@@ -1,4 +1,9 @@
-<div class="header__minicart" x-data="{ isOpened: false, }">
+<div class="header__minicart" x-data="{
+    isOpened: false,
+    openPreviewModal(raffle) {
+        @this.call('open-quickview-modal', raffle.id);
+    }    
+}">
     <div class="header__minicart-opener" @click="isOpened = !isOpened">
         <div class="icon">
             <img src="{{ asset('assets/images/minicart.svg') }}" alt="">
@@ -17,7 +22,7 @@
                         </div>
                         <div class="header__minicart-product_right">
                             <div class="header__minicart-product_right-top">
-                                <div class="header__minicart-product-name" x-text="raffle.name"></div>
+                                <div class="header__minicart-product-name" x-text="raffle.name" @click="openPreviewModal(raffle)"></div>
                                 {{-- <div class="count" x-text="raffle.count"></div> --}}
                                 <div class="header__minicart-product-remover"
                                     @click="$store.cart.removeFromCart(raffle.id)">

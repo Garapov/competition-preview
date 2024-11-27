@@ -20,6 +20,8 @@ class Minicart extends Component
             ->orderByDesc('last_trade_time')->first(),
         ]);
     }
-
-    
+    public function openModal($raffle_id)
+    {
+        $this->dispatch('open-quickview-modal', id: $raffle_id);
+    }
 }

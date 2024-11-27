@@ -15,7 +15,7 @@
                             <img :src="raffle.image" alt="">
                         </div>
                     </div>
-                    <div class="favorites__item-middle" x-text="raffle.name"></div>
+                    <div class="favorites__item-middle" x-text="raffle.name" @click="$wire.openModal(raffle.id); isOpened = false;"></div>
                     <div class="favorites__item-right">
                         <div class="favorites__item-remove-button" @click="$store.favorites.removeFromFavorites(raffle.id)">
                             <img src="{{ asset('assets/images/heart_white.svg') }}" alt="">
