@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'welcome')->name('welcome');
 Route::view('/cart', 'cart')->name('cart');
 Route::view('/checkout', 'checkout')->name('checkout');
+Route::view('/draw-results', 'draw_results')->name('draw-results');
 Route::view('/raffles/{id}', 'raffle')->name('raffle');
 
 

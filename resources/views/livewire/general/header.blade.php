@@ -6,11 +6,12 @@
             <nav class="header__menu">
                 <ul>
                     <!-- TODO: сделать вывод меню из админки  -->
-                    <li><a href="#">Competitions</a></li>
-                    <li><a href="#">Competitions</a></li>
-                    <li><a href="#">Instant Win</a></li>
-                    <li><a href="#">Instant Win</a></li>
-                    <li><a href="#">wallet</a></li>
+                    <li><a href="#" class="header__menu-link">Competitions</a></li>
+                    <li><a href="#" class="header__menu-link">draws</a></li>
+                    <li><a href="#" class="header__menu-link">Instant Win</a></li>
+                    <li><a href="#" class="header__menu-link">giveaway</a></li>
+                    <li><a href="{{ route('draw-results') }}" class="header__menu-link @if(Route::is('draw-results'))header__menu-link--active @endif" wire:navigate>winners & draw results</a></li>
+                    <li><a href="#" class="header__menu-link">how to play</a></li>
                 </ul>
             </nav>
         </div>

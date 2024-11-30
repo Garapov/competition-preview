@@ -541,15 +541,17 @@ body {
             align-items: center;
             gap: 34px;
         }
-
-        a {
-            font-size: 16px;
-            font-family: 'Segoe UI';
-            font-weight: 700;
-            letter-spacing: 0%;
-            text-transform: uppercase;
-            color: #000;
-            text-decoration: none;
+    }
+    &__menu-link {
+        font-size: 16px;
+        font-family: 'Segoe UI';
+        font-weight: 700;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none;
+        &--active {
+            color: #9947CC;
         }
     }
 
@@ -3905,5 +3907,162 @@ body {
         font-size: 14px;
         line-height: 1;
         color: #5c0b8e;
+    }
+}
+
+.draw_results {
+    &__container {
+        padding-left: 120px;
+        padding-right: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+    }
+    &__tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    &__tab {
+        padding: 20px 30px;
+        border: 1.50px solid #e0c8ff;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        text-align: center;
+        color: #333;
+        cursor: pointer;
+        &--active {
+            background: #e0c8ff;
+        }
+    }
+    &__content {
+
+    }
+    &__items {
+        padding-bottom: 123px;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            background: #AC74F6;
+            left: calc(50% - 5px);
+            top: 60px;
+            bottom: 0;
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 18px;
+        position: relative;
+        z-index: 2;
+        &:nth-child(2n+2) {
+            flex-direction: row-reverse;
+        }
+    }
+    &__item-date {
+        width: 242px;
+        height: 233px;
+        position: relative;
+    }
+    &__item-date-in {
+        width: 100%;
+        height: 100%;
+    }
+    &__item-date-border {
+        width: 100%;
+        height: 100%;
+        background: var(--image);
+    }
+    &__item-date-text {
+        position: absolute;
+        top: calc(50% - 5px);
+        left: calc(50% - 5px);
+        width: 136px;
+        height: 136px;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.4;
+        text-align: center;
+        color: #333;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+    }
+    &__item-tickets {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding-left: 18px;
+    }
+    &__item-tickets,
+    &__item-placeholder {
+        width: 367px;
+    }
+    &__item-tickets {
+        max-height: 422px;
+        overflow: auto;
+        padding-right: 8px;
+        box-sizing: border-box;
+    }
+    &__item-ticket {
+        background: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+    &__item:nth-child(2n+1) &__item-tickets {
+        transform: rotateY(180deg);
+    }
+    &__item:nth-child(2n+1) &__item-ticket {
+        transform: rotateY(180deg);
+    }
+    &__ticket-name {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .avatar {
+            font-size: 0;
+        }
+        .name {
+            font-weight: 400;
+            font-size: 16px; 
+            line-height: 1.4;
+            text-align: center;
+            color: #333
+        }
+    }
+    &__ticket-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__ticket-number {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+        color: #333;
+    }
+    &__ticket-text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4;
+        text-transform: lowercase;
+        color: #333;
     }
 }
