@@ -1,7 +1,7 @@
 <div class="header__minicart" x-data="{
     isOpened: false,
     openPreviewModal(raffle) {
-        @this.call('open-quickview-modal', raffle.id);
+        $wire.openModal(raffle.id);
     }    
 }">
     <div class="header__minicart-opener" @click="isOpened = !isOpened">

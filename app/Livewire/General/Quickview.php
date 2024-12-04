@@ -20,7 +20,7 @@ class Quickview extends Component
     public function openModal($id)
     {
         
-        // dd('asdasdasdasdasd');
+        // dd($id);
         $this->isModalOpened = true;
         $this->raffle = Raffle::where('id', $id)->first();
         // dd($this->raffle);

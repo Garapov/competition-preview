@@ -4066,3 +4066,255 @@ body {
         color: #333;
     }
 }
+
+.draws_page {
+    &__container {
+        padding-left: 120px;
+        padding-right: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__info {
+        background: #ac74f6;
+        border-radius: 40px 40px 0 0;
+        padding: 28px 55px;
+        display: flex;
+        align-items: center;
+        gap: 64px;
+    }
+    &__info_item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        .icon {
+            font-size: 0;
+        }
+        .text {
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+        }
+    }
+    &__dates {
+        box-shadow: 0 -10px 20px 0 rgba(0, 0, 0, 0.05);
+        background: #fff;
+        border-radius: 20px;
+        padding: 30px 39px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        box-sizing: border-box;
+    }
+    &__years {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__year {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #333;
+        &--disabled {
+            opacity: 0.3;
+        }
+    }
+    &__months {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__month {
+        border: 2px solid #ac74f6;
+        border-radius: 10px;
+        padding: 20px 30px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #ac74f6;
+        &--active {
+            background: #ac74f6;
+            color: #fff;
+        }
+        &--disabled {
+            background: #f4f4f4;
+            border-color: #f4f4f4;
+            opacity: 0.5;
+            color: #8e8e8e;
+        }
+    }
+    &__filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    &__select,
+    &__input input {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 28px 20px;
+        width: 328px;
+        height: 80px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 157%;
+        color: #333;
+        box-sizing: border-box;
+    }
+    &__input input {
+        padding-left: 59px;
+        background: var(--icon);
+    }
+    &__bottom {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
+        padding-top: 21px;
+    }
+    &__card {
+        display: flex;
+        gap: 21px;
+    }
+    &__card-info {
+        width: calc(100% - 135px - 21px);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__card-image {
+        font-size: 0;
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    &__card-texts {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        .title {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 120%;
+            text-transform: capitalize;
+            text-align: center;
+            color: #333;
+        }
+        .name {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 120%;
+            text-transform: uppercase;
+            text-align: center;
+            color: #333;
+        }
+        .date {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            text-align: center;
+            color: #000;
+        }
+    }
+    &__card-button {
+        box-shadow: 0 20px 20px 0 rgba(172, 116, 246, 0.2);
+        background: #ac74f6;
+        border-radius: 10px;
+        padding: 24px;
+        text-align: center;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 140%;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    }
+    &__card-date {
+        width: 135px;
+        padding-top: 230px;
+    }
+    &__card-date-in {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 39px;
+        position: sticky;
+        top: 100px;
+        .line {
+            width: 100%;
+            height: 3px;
+            background: #ac74f6;
+            position: relative;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: #ac74f6;
+                left: 0;
+                top: -3px;
+                transform: rotate(45deg);
+            }
+        }
+        .date {
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            text-align: center;
+            color: #000;
+            max-width: 125px;
+            box-sizing: border-box;
+        }
+    }
+    &__line {
+        background: #ac74f6;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ac74f6;
+            left: -3px;
+            top: 0;
+            transform: rotate(45deg);
+        }
+    }
+    &__col {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+    &__col--reversed {
+        padding-top: 50px;
+    }
+    &__col--reversed &__card {
+        flex-direction: row-reverse;
+    }
+    &__col--reversed &__card-date-in {
+        align-items: flex-end;
+        .line {
+            &:after {
+                left: auto;
+                right: -5px;
+            }
+        }
+    }
+}
