@@ -4318,3 +4318,24 @@ body {
         }
     }
 }
+
+.header__auth {
+    // ... существующие стили ...
+
+    .error {
+        color: #ff0000;
+        font-size: 12px;
+        margin-top: 4px;
+        display: block;
+    }
+
+    &__popup {
+        position: relative;
+    }
+
+    &__input {
+        &.error {
+            border-color: #ff0000;
+        }
+    }
+} // Закрывающая скобка для .header__auth
