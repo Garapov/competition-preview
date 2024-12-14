@@ -1464,7 +1464,88 @@ body {
             text-transform: uppercase;
         }
     }
-
+    &__steps {
+        display: flex;
+        align-items: flex-start;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%) translateX(100%);
+        transition: all .3s ease;
+        &--opened {
+            transform: translateY(-50%) translateX(0);
+        }
+    }
+    &__steps-tabs {
+        display: flex;
+        flex-direction: column;
+        padding-top: 51px;
+    }
+    &__steps-tab {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #333;
+        padding: 8px 24px;
+        cursor: pointer;
+        border-radius: 10px 0 0 10px;
+        box-shadow: 0 4px 20px 0 rgba(172, 116, 246, 0.2);
+        background: #fff;
+        text-transform: uppercase;
+        &--active {
+            background: #ac74f6;
+            color: #fff;
+        }
+    }
+    &__steps-content {
+        width: 506px;
+        padding: 30px 136px 30px 140px;
+        box-sizing: border-box;
+        background: var(--bg);
+        border-radius: 50px 0 0 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+    &__steps-content-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.4;
+            color: #fff;
+        }
+        .closer {
+            font-size: 0;
+            cursor: pointer;
+        }
+    }
+    &__steps-block {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .text {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #fff
+        }
+    }
+    &__steps-button {
+        font-weight: 600;
+        font-size: 14px; 
+        line-height: 1.4;
+        text-transform: uppercase;
+        text-align: center;
+        color: #ac74f6;
+        border-radius: 10px;
+        padding: 15px 24px;
+        box-shadow: 0 20px 20px 0 rgba(172, 116, 246, 0.2);
+        background: #fff;
+        cursor: pointer;
+    }
 }
 
 

@@ -53,7 +53,7 @@ document.addEventListener('livewire:init', () => {
 
 window.addEventListener('wheel_spin', (event) => {
     setTimeout(() => {
-        alert(`Вам выпало ${event.detail.result.number}`)
+        Livewire.dispatch('wheel_result');
     }, event.detail.result.time * 1000)
     
 })

@@ -55,4 +55,61 @@
             </div>
         </div>
     </div>
+    <div class="main_wheel__steps @if($stepper_opened) main_wheel__steps--opened @endif">
+        <div class="main_wheel__steps-tabs">
+            <div class="main_wheel__steps-tab @if($currentStep == 1) main_wheel__steps-tab--active @endif" wire:click="setStep(1)">
+                Step 1
+            </div>
+            <div class="main_wheel__steps-tab @if($currentStep == 2) main_wheel__steps-tab--active @endif" wire:click="setStep(2)">
+                Step 2
+            </div>
+            <div class="main_wheel__steps-tab @if($currentStep == 3) main_wheel__steps-tab--active @endif" wire:click="setStep(3)">
+                Step 3
+            </div>
+        </div>
+
+        <div class="main_wheel__steps-content" style="--bg: #ac74f6 url({{ asset('assets/images/wheel_steps_bg.png') }}) 0 0 / contain no-repeat";>
+            <div class="main_wheel__steps-content-top">
+                <div class="title">Congratulations!</div>
+                <div class="closer" wire:click="close_stepper">
+                    <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.54137 5L17.2782 19M4.54139 19L10.9098 12L17.2782 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+            @if($currentStep == 1)
+                <div class="main_wheel__steps-block">
+                    <div class="text">
+                        @if ($index)
+                            You’ve earned {{ $this->sectors[$this->index] }} credit which has been added to your wallet
+                        @endif
+                    </div>
+                    {{-- <div class="text">
+                        Promo code: [UNIQUECODE]
+                    </div> --}}
+                </div>
+                <div class="main_wheel__steps-button">
+                    Want to spin again?
+                </div>
+            @endif
+
+            @if($currentStep == 2)
+                <div class="main_wheel__steps-block">
+                    <div class="text">Выберите один из доступных призов</div>
+                </div>
+                <div class="main_wheel__steps-button">
+                    Want to spin again?
+                </div>
+            @endif
+
+            @if($currentStep == 3)
+                <div class="main_wheel__steps-block">
+                    <div class="text">Заберите ваш выигрыш прямо сейчас</div>
+                </div>
+                <div class="main_wheel__steps-button">
+                    Want to spin again?
+                </div>
+            @endif
+        </div>
+    </div>
 </div>
