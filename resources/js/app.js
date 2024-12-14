@@ -52,8 +52,8 @@ document.addEventListener('livewire:init', () => {
 
 
 window.addEventListener('wheel_spin', (event) => {
+    Livewire.dispatch('wheel_result');
     setTimeout(() => {
-        Livewire.dispatch('wheel_result');
     }, event.detail.result.time * 1000)
     
 })

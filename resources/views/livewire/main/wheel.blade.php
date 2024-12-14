@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="main_wheel__steps-content" style="--bg: #ac74f6 url({{ asset('assets/images/wheel_steps_bg.png') }}) 0 0 / contain no-repeat";>
+        <div class="main_wheel__steps-content" style="--bg: #ac74f6 url({{ asset('assets/images/wheel_steps_bg.png') }}) bottom 0 left 0 / auto 97% no-repeat";>
             <div class="main_wheel__steps-content-top">
                 <div class="title">Congratulations!</div>
                 <div class="closer" wire:click="close_stepper">
@@ -84,9 +84,9 @@
                             You’ve earned {{ $this->sectors[$this->index] }} credit which has been added to your wallet
                         @endif
                     </div>
-                    {{-- <div class="text">
+                    <div class="text">
                         Promo code: [UNIQUECODE]
-                    </div> --}}
+                    </div>
                 </div>
                 <div class="main_wheel__steps-button">
                     Want to spin again?
